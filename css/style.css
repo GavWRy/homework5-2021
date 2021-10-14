@@ -98,8 +98,6 @@ a:focus{
 .container{
   display: grid;
   grid-template-columns: 1fr 5fr 1fr;
-  grid-column-start: 1;
-  grid-column-end: 4;
   grid-template-rows: auto auto auto;
   grid-row-gap: 15px;
   /* Requirement 5 code here*/
@@ -116,29 +114,56 @@ header{
   height: 400px; /* Parallax effect */
 
   /* YOUR CODE HERE; */
-  grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row-start:1;
-  grid-row-end:1;
-  background-image: url("/images/header.jpg");
+  grid-column: 1 / span 3;
+  grid-row: 1 / span 1;
+  background-image: url("../images/header.jpg");
+  background-repeat: no-repeat;
 }
 
 
 
 .about-image{
-  
+  grid-column: 1 / span 3;
+  max-height: 700px;
+  grid-row: 2 / span 1;
 }
 
 .about{
- 
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
 }
 
 .method-image{
- 
+  grid-column: 1 / span 3;
+  max-height: 700px;
+  grid-row: 3 / span 1;
 }
 
 .method{
-  
+  grid-column: 2 / span 1;
+  grid-row: 3 / span 1;
+}
+
+.clients-image{
+  grid-column: 1 / span 3;
+  max-height: 700px;
+  grid-row: 4 / span 1;
+}
+
+.clients{
+  grid-column: 2 / span 1;
+  grid-row: 4 / span 1;
+}
+
+.contact-image{
+  grid-column: 1 / span 3;
+  max-height: 700px;
+  grid-row: 5 / span 1;
+}
+
+.contact{
+  grid-column: 2 / span 1;
+  grid-row: 5 / span 1;
 }
 
 /* You need to write some of your own selectors here */
@@ -151,7 +176,7 @@ header{
   padding: 30px;
 
   /* Your code here */
-
+  align-items: center;
 }
 
 @media screen and (min-width: 800px){
@@ -162,41 +187,42 @@ header{
   }
 
   .container{
-   
+   grid-template-columns: 50px auto 500px auto 50px;
+   grid-template-rows: 400px 400px 400px 400px 400px;
   }
 
   
 
   .about-image{
-  
+    grid-column: 2 / span 2;
   }
 
   .about{
-    
+    grid-column: 3 / span 2;
   }
 
   .method-image{
-    
+    grid-column: 3 / span 2;
   }
 
   .method{
-   
+    grid-column: 2 / span 2;
   }
 
   .clients-image{
-    
+    grid-column: 2 / span 2;
   }
 
   .clients{
-    
+    grid-column: 3 / span 2;
   }
 
   .contact-image{
-    
+    grid-column: 3 / span 2;
   }
 
   .contact{
-    
+    grid-column: 2 / span 2;
   }
 
 }
